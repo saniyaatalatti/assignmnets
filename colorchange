@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ColorChanger : MonoBehaviour
+{
+    public FlexibleColorPicker colorPicker;
+    public Material material;
+    public Button button; // Public variable for the button
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Add a listener to the button's click event
+        button.onClick.AddListener(ChangeColor);
+    }
+
+    // Method to be called when the button is clicked
+    void ChangeColor()
+    {
+        // Change the color of the material to the color selected in the color picker
+        material.color = colorPicker.color;
+    }
+}
